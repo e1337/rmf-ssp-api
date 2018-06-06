@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+    org.springframework.jdbc.datasource: INFO
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update

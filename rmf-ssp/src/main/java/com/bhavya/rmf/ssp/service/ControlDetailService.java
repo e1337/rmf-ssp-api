@@ -144,11 +144,11 @@ public class ControlDetailService {
       //statements
 
       //statements
-      List<Statements> ceStatementsList = statementsRepository.getStatementsByControlId(id);
+      List<Statements> ceStatementsList = statementsRepository.getStatementsByControlEnhancementId(ce.getId());
       List<StatementStructure> ceStatementStructureList = new ArrayList<>();
       for (Statements ceSt : ceStatementsList) {
         List<StatementsSub> ceStatementsSubs = statementsSubRepository
-            .getStatementsSubByControlId(id);
+            .getStatementsSubByControlEnhancementId(ce.getId());
 
         List<StatementSubStructure> ceStatementSubStructureList = new ArrayList<>();
         for (StatementsSub ceStS : ceStatementsSubs) {
@@ -184,7 +184,7 @@ public class ControlDetailService {
       List<SupplementalGuidanceStructure> ceSupGuidanceStructList;
       ceSupGuidanceStructList = controlEnhancementStructure.getSupplementalGuidanceStructureList();
       if (ceSupGuidanceStructList == null) {
-        ceSupGuidanceStructList = new ArrayList<SupplementalGuidanceStructure>();
+        ceSupGuidanceStructList = new ArrayList<>();
       }
       for (SupplementalGuidance csg : ceSupplementalGuidanceList) {
         ceSupplementalGuidanceStructure.setSupplementalGuidance(csg);
